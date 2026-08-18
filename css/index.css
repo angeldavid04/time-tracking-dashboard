@@ -8,6 +8,7 @@ body {
   flex-direction: column;
   font-family: "Rubik", sans-serif;
   background-color: var(--navy950);
+  min-height: 100vh;
 }
 
 .d-block {
@@ -18,6 +19,7 @@ body {
 .reports {
   padding-block: 4rem;
   display: grid;
+  align-items: start;
   gap: 2rem;
 }
 
