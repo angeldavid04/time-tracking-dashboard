@@ -4,7 +4,8 @@
 
 body {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   font-family: "Rubik", sans-serif;
   background-color: var(--navy950);
 }
@@ -20,6 +21,8 @@ body {
 
 .report-card {
   background-color: var(--navy900);
+  padding-block: 1.5rem;
+  padding-inline: 2rem;
 }
 
 .report-card__for {
