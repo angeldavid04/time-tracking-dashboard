@@ -7,3 +7,21 @@ body {
   justify-content: center;
   font-family: "Rubik", sans-serif;
 }
+
+.d-block {
+  display: block;
+}
+
+/* ----- REPORTS SECTION ----- */
+.reports {
+  padding-block: 4rem;
+}
+
+.report-card__for {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.report-card__username {
+  font-weight: 400;
+}
