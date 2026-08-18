@@ -17,19 +17,156 @@ body {
 /* ----- REPORTS SECTION ----- */
 .reports {
   padding-block: 4rem;
+  display: grid;
+  gap: 2rem;
 }
 
 .report-card {
-  background-color: var(--navy900);
+  border-radius: 16px;
+  color: hsl(0, 0%, 100%);
+
+  &[data-variant="header"] {
+    background-color: var(--navy900);
+  }
+
+  &[data-variant="work"] {
+    background-color: var(--orange300);
+    --_icon: var(--icon-work);
+  }
+
+  &[data-variant="play"] {
+    background-color: var(--blue300);
+    --_icon: var(--icon-play);
+  }
+
+  &[data-variant="study"] {
+    background-color: var(--pink400);
+    --_icon: var(--icon-study);
+  }
+
+  &[data-variant="exercise"] {
+    background-color: var(--green400);
+    --_icon: var(--icon-exercise);
+  }
+
+  &[data-variant="social"] {
+    background-color: var(--purple700);
+    --_icon: var(--icon-social);
+  }
+
+  &[data-variant="self-care"] {
+    background-color: var(--Yellow300);
+    --_icon: var(--icon-self-care);
+  }
+}
+
+.report-card__header {
+  background-color: var(--purple600);
+  padding-block: 2rem;
+  padding-inline: 2rem 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  border-radius: inherit;
+}
+
+.report-card__user-image {
+  width: 4rem;
+  border-radius: 50%;
+  border: 3px solid hsl(0, 0%, 100%);
+}
+
+.report-card__menu {
   padding-block: 1.5rem;
-  padding-inline: 2rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.report-card__option {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  color: color-mix(in srgb, var(--navy200), transparent 50%);
+  font-size: 1.1rem;
+  font-weight: 300;
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: currentColor;
+  }
 }
 
 .report-card__for {
   font-size: 1rem;
   font-weight: 300;
+  color: var(--navy200);
+  margin-block: 0 0.25rem;
 }
 
 .report-card__username {
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.report-card__image {
+  padding-block: 1.25rem;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: var(--_icon);
+    position: absolute;
+    right: 14px;
+    top: -10px;
+  }
+}
+
+.report-card__main {
+  padding-block: 2rem;
+  padding-inline: 2rem;
+  background-color: var(--navy900);
+  border-radius: inherit;
+}
+
+.report-card__title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block: 0 0.75rem;
+}
+
+.report-card__title {
   font-weight: 400;
+  font-size: 1.25rem;
+}
+
+.report-card__menu-btn {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  transition: filter 0.3s ease-in-out;
+
+  &:hover {
+    filter: brightness(2);
+  }
+}
+
+.report-card__content {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+
+  &[data-current] {
+    display: flex;
+  }
+}
+
+.report-card__time {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.report-card__previous {
+  color: var(--navy200);
 }
