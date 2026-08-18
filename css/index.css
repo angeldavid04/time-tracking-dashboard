@@ -6,6 +6,7 @@ body {
   display: flex;
   justify-content: center;
   font-family: "Rubik", sans-serif;
+  background-color: var(--navy950);
 }
 
 .d-block {
@@ -15,6 +16,10 @@ body {
 /* ----- REPORTS SECTION ----- */
 .reports {
   padding-block: 4rem;
+}
+
+.report-card {
+  background-color: var(--navy900);
 }
 
 .report-card__for {
