@@ -1,7 +1,41 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
-@import url("root.css");
 @import url("reset.css");
 
+/* ----- CUSTOM PROPERTIES ----- */
+:root {
+  /* COLORS */
+  /* Primary */
+  --purple600: hsl(246, 80%, 60%);
+  --orange300: hsl(15, 100%, 70%);
+  --blue300: hsl(195, 74%, 62%);
+  --pink400: hsl(348, 100%, 68%);
+  --green400: hsl(145, 58%, 55%);
+  --purple700: hsl(264, 64%, 52%);
+  --Yellow300: hsl(43, 84%, 65%);
+  /* Neutral */
+  --navy950: hsl(226, 43%, 10%);
+  --navy900: hsl(235, 46%, 20%);
+  --purple500: hsl(235, 45%, 61%);
+  --navy200: hsl(236, 100%, 87%);
+  /* ICON IMAGES */
+  --icon-work: url("../images/icon-work.svg");
+  --icon-play: url("../images/icon-play.svg");
+  --icon-study: url("../images/icon-study.svg");
+  --icon-exercise: url("../images/icon-exercise.svg");
+  --icon-social: url("../images/icon-social.svg");
+  --icon-self-care: url("../images/icon-self-care.svg");
+}
+
+/* ----- RESET ----- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* ----- GENERAL ----- */
 body {
   display: flex;
   align-items: center;
