@@ -119,10 +119,14 @@ body {
   overflow: hidden;
 
   &::before {
-    content: var(--_icon);
+    content: "";
+    background: var(--_icon) no-repeat;
+    background-size: contain;
     position: absolute;
-    right: 14px;
-    top: -10px;
+    width: 4.5rem;
+    height: 5rem;
+    top: -3.25%;
+    right: 5%;
   }
 }
 
@@ -229,5 +233,9 @@ body {
     flex-direction: column;
     align-items: start;
     gap: 0.5rem;
+  }
+
+  .report-card__image::before {
+    top: -20%;
   }
 }
