@@ -271,7 +271,7 @@ body {
   .reports {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr 1fr;
-    min-height: 52ch;
+    min-height: 46ch;
     max-width: 100ch;
   }
 

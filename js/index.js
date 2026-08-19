@@ -39,7 +39,7 @@ function createCard({ title, timeframes }, delay) {
     <div class="report-card__main">
     <div class="report-card__title-container">
       <h2 class="report-card__title">${title}</h2>
-      <button class="report-card__menu-btn"><img src="images/icon-ellipsis.svg" alt="open options menu"></button>
+      <button class="report-card__menu-btn"><img src="images/icon-ellipsis.svg" alt="${title} open menu"></button>
     </div>
     <div class="report-card__content" data-name="daily" data-current>
       <span class="report-card__time">${hoursFormat(daily.current)}</span>
@@ -47,11 +47,11 @@ function createCard({ title, timeframes }, delay) {
     </div>
     <div class="report-card__content" data-name="weekly">
       <span class="report-card__time">${hoursFormat(weekly.current)}</span>
-      <span class="report-card__previous">Previous - ${hoursFormat(weekly.current)}</span>
+      <span class="report-card__previous">Last week - ${hoursFormat(weekly.current)}</span>
     </div>
     <div class="report-card__content" data-name="monthly">
       <span class="report-card__time">${hoursFormat(monthly.current)}</span>
-      <span class="report-card__previous">Previous - ${hoursFormat(monthly.current)}</span>
+      <span class="report-card__previous">Last month - ${hoursFormat(monthly.current)}</span>
     </div>
   </div>
   `;
