@@ -22,7 +22,7 @@ body {
 
 /* ----- REPORTS SECTION ----- */
 .reports {
-  padding-block: 4rem;
+  margin-block: 4rem;
   display: grid;
   align-items: start;
   gap: 2rem;
@@ -231,7 +231,7 @@ body {
   .reports {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr 1fr;
-    min-height: 60ch;
+    min-height: 52ch;
     max-width: 100ch;
   }
 
