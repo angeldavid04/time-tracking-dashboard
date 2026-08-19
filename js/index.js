@@ -69,7 +69,25 @@ async function populateCards() {
   $container.appendChild($fragment);
 }
 
+function filterCards(selection) {
+  const $cardContents = document.querySelectorAll(".report-card__content");
+
+  $cardContents.forEach((content) => {
+    content.getAttribute("data-name") === selection
+      ? content.setAttribute("data-current", "")
+      : content.removeAttribute("data-current");
+  });
+}
+
 populateCards();
+
+document.addEventListener("change", (e) => {
+  if (e.target.matches(".report-card__radio")) {
+    const selection = e.target.value;
+
+    filterCards(selection);
+  }
+});
 
 /* ---- CARD MODEL ----
 <section class="report-card" data-variant="work">
