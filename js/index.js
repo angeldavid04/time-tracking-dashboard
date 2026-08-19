@@ -35,7 +35,7 @@ function createCard({ title, timeframes }, delay) {
   $reportCard.setAttribute("data-variant", variantFormat(title));
 
   $reportCard.innerHTML = `
-  <div class="report-card__image"></div>
+    <div class="report-card__image"></div>
     <div class="report-card__main">
     <div class="report-card__title-container">
       <h2 class="report-card__title">${title}</h2>
