@@ -33,7 +33,7 @@ body {
   color: hsl(0, 0%, 100%);
   display: flex;
   flex-direction: column;
-  animation: fade-in 350ms ease-in-out both;
+  animation: fade-in 350ms ease-out both;
   animation-delay: var(--delay, 0);
 
   &[data-variant="header"] {
@@ -210,7 +210,7 @@ body {
 
 @keyframes fade-in {
   from {
-    translate: 0 5%;
+    translate: 0 5.25%;
     scale: 0.95;
     opacity: 0;
   }

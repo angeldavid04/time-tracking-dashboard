@@ -1,5 +1,10 @@
 const $container = document.querySelector(".reports");
 const fetchUrl = "../data.json";
+const CARD_DELAY = Object.freeze({
+  initial: 50,
+  step: 50,
+  unit: "ms"
+});
 
 async function getData(url) {
   if (url === undefined) return console.error("There is no an url to fetch");
@@ -26,7 +31,7 @@ function createCard({ title, timeframes }, delay) {
   const hoursFormat = (time) => `${time}${time === 1 ? "hr" : "hrs"}`;
 
   $reportCard.classList.add("report-card");
-  $reportCard.style.setProperty("--delay", `${delay}ms`);
+  $reportCard.style.setProperty("--delay", `${delay}${CARD_DELAY.unit}`);
   $reportCard.setAttribute("data-variant", variantFormat(title));
 
   $reportCard.innerHTML = `
@@ -58,12 +63,13 @@ async function populateCards() {
   const reports = await getData(fetchUrl);
   const $fragment = document.createDocumentFragment();
 
-  let delay = 100;
+  let delay = CARD_DELAY.initial;
+
   reports.forEach((report) => {
     const $card = createCard(report, delay);
     $fragment.appendChild($card);
 
-    delay += 100;
+    delay += CARD_DELAY.step;
   });
 
   $container.appendChild($fragment);
