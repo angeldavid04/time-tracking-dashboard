@@ -197,6 +197,12 @@ body {
   background-color: var(--navy900);
   border-radius: inherit;
   flex: 1;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover:not(:has(button:hover)) {
+    background-color: color-mix(in srgb, var(--navy900) 90%, var(--navy200));
+  }
 }
 
 .report-card__title-container {
