@@ -83,9 +83,9 @@ populateCards();
 
 document.addEventListener("change", (e) => {
   if (e.target.matches(".report-card__radio")) {
-    const selection = e.target.value;
+    const selectedValue = e.target.value;
 
-    filterCards(selection);
+    filterCards(selectedValue);
   }
 });
 
