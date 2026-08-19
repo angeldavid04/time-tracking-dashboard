@@ -28,6 +28,8 @@ body {
   color: hsl(0, 0%, 100%);
   display: flex;
   flex-direction: column;
+  animation: fade-in 350ms ease-in-out both;
+  animation-delay: var(--delay, 0);
 
   &[data-variant="header"] {
     background-color: var(--navy900);
@@ -179,6 +181,20 @@ body {
 .report-card__previous {
   color: var(--navy200);
   font-size: 0.925rem;
+}
+
+@keyframes fade-in {
+  from {
+    translate: 0 5%;
+    scale: 0.95;
+    opacity: 0;
+  }
+
+  to {
+    translate: 0;
+    scale: 1;
+    opacity: 1;
+  }
 }
 
 /* ----- MEDIA QUERIES ----- */
