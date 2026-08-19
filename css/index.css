@@ -102,6 +102,15 @@ body {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+
+  &:checked + .report-card__label {
+    color: currentColor;
+  }
+
+  &:focus-visible + .report-card__label {
+    outline: 1px solid var(--navy200);
+    outline-offset: 0.25em;
+  }
 }
 
 .report-card__label {
@@ -117,10 +126,6 @@ body {
   &:hover {
     color: currentColor;
   }
-}
-
-:checked + .report-card__label {
-  color: currentColor;
 }
 
 .report-card__for {
