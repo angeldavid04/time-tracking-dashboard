@@ -41,11 +41,11 @@ function createCard({ title, timeframes }, delay) {
       <span class="report-card__previous">Previous - ${hoursFormat(daily.previous)}</span>
     </div>
     <div class="report-card__content" data-name="weekly">
-      <span class="report-card__time">${hoursFormat(weekly.current)}hs</span>
+      <span class="report-card__time">${hoursFormat(weekly.current)}</span>
       <span class="report-card__previous">Previous - ${hoursFormat(weekly.current)}</span>
     </div>
     <div class="report-card__content" data-name="monthly">
-      <span class="report-card__time">${hoursFormat(monthly.current)}rs</span>
+      <span class="report-card__time">${hoursFormat(monthly.current)}</span>
       <span class="report-card__previous">Previous - ${hoursFormat(monthly.current)}</span>
     </div>
   </div>
