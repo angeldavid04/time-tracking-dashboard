@@ -98,11 +98,11 @@ function createCard({ title, timeframes }, delay) {
     </div>
     <div class="report-card__content" data-name="weekly">
       <span class="report-card__time">${hoursFormat(weekly.current)}</span>
-      <span class="report-card__previous">Last week - ${hoursFormat(weekly.current)}</span>
+      <span class="report-card__previous">Last week - ${hoursFormat(weekly.previous)}</span>
     </div>
     <div class="report-card__content" data-name="monthly">
       <span class="report-card__time">${hoursFormat(monthly.current)}</span>
-      <span class="report-card__previous">Last month - ${hoursFormat(monthly.current)}</span>
+      <span class="report-card__previous">Last month - ${hoursFormat(monthly.previous)}</span>
     </div>
   </div>
   `;

@@ -12,6 +12,7 @@
   --purple700: hsl(264, 64%, 52%);
   --Yellow300: hsl(43, 84%, 65%);
   /* Neutral */
+  --white: hsl(0, 0%, 100%);
   --navy950: hsl(226, 43%, 10%);
   --navy900: hsl(235, 46%, 20%);
   --purple500: hsl(235, 45%, 61%);
@@ -61,7 +62,7 @@ body {
   padding-block: 1.25rem;
   padding-inline: 2rem;
   border-radius: 16px;
-  color: hsl(0, 0%, 100%);
+  color: var(--white);
   animation: fade-in 0.35s both;
 }
 
@@ -75,7 +76,7 @@ body {
 
 .report-card {
   border-radius: 16px;
-  color: hsl(0, 0%, 100%);
+  color: var(--white);
   display: flex;
   flex-direction: column;
   animation: fade-in 350ms ease-out both;
@@ -129,7 +130,7 @@ body {
 .report-card__user-image {
   width: 4rem;
   border-radius: 50%;
-  border: 3px solid hsl(0, 0%, 100%);
+  border: 3px solid var(--white);
 }
 
 .report-card__menu {
