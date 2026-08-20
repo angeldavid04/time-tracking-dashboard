@@ -51,7 +51,12 @@ function renderFetchError(err) {
 
 // With axios
 /* function getData(url) {
-  const request = axios.get(url).then((res) => res.data);
+  const request = axios
+    .get(url)
+    .then((res) => res.data)
+    .catch((err) => {
+      throw err.response;
+    });
 
   return request;
 } */
@@ -70,9 +75,13 @@ function renderFetchError(err) {
 
 // With axios + async - await
 async function getData(url) {
-  const res = await axios.get(url);
+  try {
+    const res = await axios.get(url);
 
-  return res.data;
+    return res.data;
+  } catch (err) {
+    throw err.response;
+  }
 }
 
 function createCard({ title, timeframes }, delay) {
