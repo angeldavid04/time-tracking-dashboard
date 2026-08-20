@@ -1,5 +1,5 @@
 const $container = document.querySelector(".reports");
-const fetchUrl = "../data.json";
+const fetchUrl = "data.json";
 const CARD_DELAY = {
   initial: 50,
   step: 50,
