@@ -1,10 +1,10 @@
 const $container = document.querySelector(".reports");
 const fetchUrl = "../data.json";
-const CARD_DELAY = Object.freeze({
+const CARD_DELAY = {
   initial: 50,
   step: 50,
   unit: "ms"
-});
+};
 
 async function getData(url) {
   if (url === undefined) return console.error("There is no an url to fetch");
