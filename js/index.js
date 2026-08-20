@@ -6,10 +6,10 @@ const CARD_DELAY = {
   unit: "ms"
 };
 
-function renderFetchError(err) {
+function renderFetchError({ status, statusText }) {
   const $errorMessage = document.createElement("span");
 
-  $errorMessage.textContent = `Error ${err.status}: ${err.statusText || "An error has occurred"}`;
+  $errorMessage.textContent = `Error ${status}: ${statusText || "An error has occurred"}`;
   $errorMessage.classList.add("error");
 
   $container.appendChild($errorMessage);
