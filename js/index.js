@@ -18,8 +18,6 @@ function renderFetchError(err) {
 /* --- OLD STYLE --- */
 // With XMLHTTPRequest
 /* function getData(url) {
-  if (url === undefined) return console.error("There is no an url to fetch");
-
   const request = new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
 
@@ -53,8 +51,6 @@ function renderFetchError(err) {
 
 // With axios
 /* function getData(url) {
-  if (url === undefined) return console.error("There is no an url to fetch");
-
   const request = axios.get(url).then((res) => res.data);
 
   return request;
@@ -63,8 +59,6 @@ function renderFetchError(err) {
 /* --- NEW STYLE --- */
 // With fetch + async - await
 /* async function getData(url) {
-  if (url === undefined) return console.error("There is no an url to fetch");
-
   const res = await fetch(url);
 
   if (!res.ok) throw { status: res.status, statusText: res.statusText };
@@ -76,8 +70,6 @@ function renderFetchError(err) {
 
 // With axios + async - await
 async function getData(url) {
-  if (url === undefined) return console.error("There is no an url to fetch");
-
   const res = await axios.get(url);
 
   return res.data;
