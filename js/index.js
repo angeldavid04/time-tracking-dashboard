@@ -6,22 +6,35 @@ const CARD_DELAY = {
   unit: "ms"
 };
 
+function renderFetchError(err) {
+  const $errorMessage = document.createElement("span");
+
+  $errorMessage.textContent = `Error ${err.status}: ${err.statusText || "An error has ocurred"}`;
+  $errorMessage.classList.add("error");
+
+  $container.appendChild($errorMessage);
+}
+
+// With fetch + async - await
+/* async function getData(url) {
+  if (url === undefined) return console.error("There is no an url to fetch");
+
+  const res = await fetch(url);
+
+  if (!res.ok) throw { status: res.status, statusText: res.statusText };
+
+  const json = await res.json();
+
+  return json;
+} */
+
+// With axios + async - await
 async function getData(url) {
   if (url === undefined) return console.error("There is no an url to fetch");
 
-  try {
-    const res = await fetch(url);
+  const res = await axios.get(url);
 
-    if (!res.ok) throw { status: res.status, statusText: res.statusText };
-
-    const json = await res.json();
-
-    return json;
-  } catch (err) {
-    console.error(
-      `Error ${err.status}: ${err.statusText || "An error has ocurred"}`
-    );
-  }
+  return res.data;
 }
 
 function createCard({ title, timeframes }, delay) {
@@ -60,19 +73,23 @@ function createCard({ title, timeframes }, delay) {
 }
 
 async function populateCards() {
-  const reports = await getData(fetchUrl);
-  const $fragment = document.createDocumentFragment();
+  try {
+    const reports = await getData(fetchUrl);
+    const $fragment = document.createDocumentFragment();
 
-  let delay = CARD_DELAY.initial;
+    let delay = CARD_DELAY.initial;
 
-  reports.forEach((report) => {
-    const $card = createCard(report, delay);
-    $fragment.appendChild($card);
+    reports.forEach((report) => {
+      const $card = createCard(report, delay);
+      $fragment.appendChild($card);
 
-    delay += CARD_DELAY.step;
-  });
+      delay += CARD_DELAY.step;
+    });
 
-  $container.appendChild($fragment);
+    $container.appendChild($fragment);
+  } catch (err) {
+    renderFetchError(err);
+  }
 }
 
 function filterCards(selection) {

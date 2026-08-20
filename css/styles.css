@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
-@import url("reset.css");
 
 /* ----- CUSTOM PROPERTIES ----- */
 :root {
@@ -24,6 +23,8 @@
   --icon-exercise: url("../images/icon-exercise.svg");
   --icon-social: url("../images/icon-social.svg");
   --icon-self-care: url("../images/icon-self-care.svg");
+  /* ERROR MESSAGE */
+  --error-bg: hsl(0, 67%, 41%);
 }
 
 /* ----- RESET ----- */
@@ -52,6 +53,16 @@ body {
 
 .d-block {
   display: block;
+}
+
+/* ----- ERROR MESSAGE ----- */
+.error {
+  background-color: var(--error-bg);
+  padding-block: 1.25rem;
+  padding-inline: 2rem;
+  border-radius: 16px;
+  color: hsl(0, 0%, 100%);
+  animation: fade-in 0.35s both;
 }
 
 /* ----- REPORTS SECTION ----- */
