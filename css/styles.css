@@ -10,7 +10,7 @@
   --pink400: hsl(348, 100%, 68%);
   --green400: hsl(145, 58%, 55%);
   --purple700: hsl(264, 64%, 52%);
-  --Yellow300: hsl(43, 84%, 65%);
+  --yellow300: hsl(43, 84%, 65%);
   /* Neutral */
   --white: hsl(0, 0%, 100%);
   --navy950: hsl(226, 43%, 10%);
@@ -112,7 +112,7 @@ body {
   }
 
   &[data-variant="self-care"] {
-    background-color: var(--Yellow300);
+    background-color: var(--yellow300);
     --_icon: var(--icon-self-care);
   }
 }
