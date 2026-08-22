@@ -101,15 +101,15 @@ function createCard({ title, timeframes }, delay) {
       <h2 class="report-card__title">${title}</h2>
       <button class="report-card__menu-btn"><img src="images/icon-ellipsis.svg" alt="${title} open menu"></button>
     </div>
-    <div class="report-card__content" data-name="daily" data-current>
+    <div class="report-card__content" data-timeframe="daily" data-current>
       <span class="report-card__time">${hoursFormat(daily.current)}</span>
       <span class="report-card__previous">Previous - ${hoursFormat(daily.previous)}</span>
     </div>
-    <div class="report-card__content" data-name="weekly">
+    <div class="report-card__content" data-timeframe="weekly">
       <span class="report-card__time">${hoursFormat(weekly.current)}</span>
       <span class="report-card__previous">Last week - ${hoursFormat(weekly.previous)}</span>
     </div>
-    <div class="report-card__content" data-name="monthly">
+    <div class="report-card__content" data-timeframe="monthly">
       <span class="report-card__time">${hoursFormat(monthly.current)}</span>
       <span class="report-card__previous">Last month - ${hoursFormat(monthly.previous)}</span>
     </div>
@@ -139,13 +139,13 @@ async function populateCards() {
   }
 }
 
-function filterCards(selection) {
-  const $cardContents = document.querySelectorAll(".report-card__content");
+function filterCards(timeframe) {
+  const $cardTimeframes = document.querySelectorAll(".report-card__content");
 
-  $cardContents.forEach((content) => {
-    content.getAttribute("data-name") === selection
-      ? content.setAttribute("data-current", "")
-      : content.removeAttribute("data-current");
+  $cardTimeframes.forEach(($timeframe) => {
+    $timeframe.getAttribute("data-timeframe") === timeframe
+      ? $timeframe.setAttribute("data-current", "")
+      : $timeframe.removeAttribute("data-current");
   });
 }
 
@@ -153,9 +153,9 @@ populateCards();
 
 document.addEventListener("change", (e) => {
   if (e.target.matches(".report-card__radio")) {
-    const selectedValue = e.target.value;
+    const currentTimeframe = e.target.value;
 
-    filterCards(selectedValue);
+    filterCards(currentTimeframe);
   }
 });
 
