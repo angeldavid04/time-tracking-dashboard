@@ -15,73 +15,10 @@ function renderFetchError({ status, statusText }) {
   $container.appendChild($errorMessage);
 }
 
-/* --- OLD STYLE --- */
-// With XMLHTTPRequest
-/* function getData(url) {
-  const request = new Promise((resolve, reject) => {
-    const xhr = new XMLHttpRequest();
-
-    xhr.addEventListener("readystatechange", () => {
-      if (xhr.readyState !== 4) return;
-
-      if (xhr.status >= 200 && xhr.status < 300) {
-        const json = JSON.parse(xhr.responseText);
-
-        resolve(json);
-      } else {
-        reject({ status: xhr.status, statusText: xhr.statusText });
-      }
-    });
-
-    xhr.open("GET", url);
-    xhr.send();
-  });
-
-  return request;
-} */
-
-// With fetch
-/* function getData(url) {
-  const request = fetch(fetchUrl)
-    .then((res) => (res.ok ? res.json() : Promise.reject(res)))
-    .then((json) => json);
-
-  return request;
-} */
-
-// With axios
-/* function getData(url) {
-  const request = axios
-    .get(url)
-    .then((res) => res.data)
-    .catch((err) => {
-      throw err.response ?? { status: 0, statusText: "Network error" };
-    });
-
-  return request;
-} */
-
-/* --- NEW STYLE --- */
-// With fetch + async - await
-/* async function getData(url) {
-  const res = await fetch(url);
-
-  if (!res.ok) throw { status: res.status, statusText: res.statusText };
-
-  const json = await res.json();
-
-  return json;
-} */
-
-// With axios + async - await
 async function getData(url) {
-  try {
-    const res = await axios.get(url);
-
-    return res.data;
-  } catch (err) {
-    throw err.response ?? { status: 0, statusText: "Network error" };
-  }
+  const res = await fetch(url);
+  if (!res.ok) throw { status: res.status, statusText: res.statusText };
+  return res.json();
 }
 
 function createCard({ title, timeframes }, delay) {
@@ -159,28 +96,3 @@ document.addEventListener("change", (e) => {
     filterCards(currentTimeframe);
   }
 });
-
-/* ---- CARD MODEL ----
-<section class="report-card" data-variant="work">
-  <div class="report-card__image">
-  </div>
-  <div class="report-card__main">
-    <div class="report-card__title-container">
-      <h2 class="report-card__title">Work</h2>
-      <button class="report-card__menu-btn"><img src="images/icon-ellipsis.svg" alt="open options menu"></button>
-    </div>
-    <div class="report-card__content" data-name="daily" data-current> <!-- daily -->
-      <span class="report-card__time">5hrs</span>
-      <span class="report-card__previous">Previous - 7hrs</span>
-    </div>
-    <div class="report-card__content" data-name="weekly"> <!-- weekly -->
-      <span class="report-card__time">32hrs</span>
-      <span class="report-card__previous">Previous - 36hrs</span>
-    </div>
-    <div class="report-card__content" data-name="monthly"> <!-- monthly -->
-      <span class="report-card__time">103hrs</span>
-      <span class="report-card__previous">Previous - 128hrs</span>
-    </div>
-  </div>
-</section>
-*/
