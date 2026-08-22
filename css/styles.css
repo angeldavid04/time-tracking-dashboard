@@ -68,6 +68,7 @@ body {
 
 /* ----- REPORTS SECTION ----- */
 .reports {
+  width: min(100% - 3rem, 20.5rem);
   margin-block: 4rem;
   display: grid;
   align-items: start;
@@ -283,8 +284,8 @@ body {
   .reports {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr 1fr;
-    min-height: 46ch;
-    max-width: 100ch;
+    min-height: 46rem;
+    min-width: 100rem;
   }
 
   .report-card {
