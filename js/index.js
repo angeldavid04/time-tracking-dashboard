@@ -72,7 +72,10 @@ async function populateCards() {
     });
 
     $container.appendChild($fragment);
-    filterCards(document.querySelector(".report-card__radio:checked").value);
+
+    const defaultTimeframe =
+      document.querySelector(".report-card__radio:checked").value || "daily";
+    filterCards(defaultTimeframe);
   } catch (err) {
     renderFetchError(err);
   }
