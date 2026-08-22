@@ -87,12 +87,13 @@ async function getData(url) {
 function createCard({ title, timeframes }, delay) {
   const $reportCard = document.createElement("section");
   const { daily, weekly, monthly } = timeframes;
-  const variantFormat = (title) => title.toLowerCase().split(" ").join("-");
+
+  const attributeFormat = (text) => text.toLowerCase().split(" ").join("-");
   const hoursFormat = (time) => `${time}${time === 1 ? "hr" : "hrs"}`;
 
   $reportCard.classList.add("report-card");
   $reportCard.style.setProperty("--delay", `${delay}${CARD_DELAY.unit}`);
-  $reportCard.setAttribute("data-variant", variantFormat(title));
+  $reportCard.setAttribute("data-variant", attributeFormat(title));
 
   $reportCard.innerHTML = `
     <div class="report-card__image"></div>
