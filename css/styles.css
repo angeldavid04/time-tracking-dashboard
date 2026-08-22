@@ -282,8 +282,8 @@ body {
   .reports {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr 1fr;
-    min-height: 46rem;
-    min-width: 100rem;
+    max-height: 50rem;
+    min-width: 62rem;
   }
 
   .report-card {
