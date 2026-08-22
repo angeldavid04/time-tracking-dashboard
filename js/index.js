@@ -98,23 +98,23 @@ function createCard({ title, timeframes }, delay) {
   $reportCard.innerHTML = `
     <div class="report-card__image"></div>
     <div class="report-card__main">
-    <div class="report-card__title-container">
-      <h2 class="report-card__title">${title}</h2>
-      <button type="button" class="report-card__menu-btn"><img src="images/icon-ellipsis.svg" alt="${title} open menu"></button>
+      <div class="report-card__title-container">
+        <h2 class="report-card__title">${title}</h2>
+        <button type="button" class="report-card__menu-btn"><img src="images/icon-ellipsis.svg" alt="${title} open menu"></button>
+      </div>
+      <div class="report-card__content" data-timeframe="daily" data-current>
+        <span class="report-card__time">${hoursFormat(daily.current)}</span>
+        <span class="report-card__previous">Previous - ${hoursFormat(daily.previous)}</span>
+      </div>
+      <div class="report-card__content" data-timeframe="weekly">
+        <span class="report-card__time">${hoursFormat(weekly.current)}</span>
+        <span class="report-card__previous">Last week - ${hoursFormat(weekly.previous)}</span>
+      </div>
+      <div class="report-card__content" data-timeframe="monthly">
+        <span class="report-card__time">${hoursFormat(monthly.current)}</span>
+        <span class="report-card__previous">Last month - ${hoursFormat(monthly.previous)}</span>
+      </div>
     </div>
-    <div class="report-card__content" data-timeframe="daily" data-current>
-      <span class="report-card__time">${hoursFormat(daily.current)}</span>
-      <span class="report-card__previous">Previous - ${hoursFormat(daily.previous)}</span>
-    </div>
-    <div class="report-card__content" data-timeframe="weekly">
-      <span class="report-card__time">${hoursFormat(weekly.current)}</span>
-      <span class="report-card__previous">Last week - ${hoursFormat(weekly.previous)}</span>
-    </div>
-    <div class="report-card__content" data-timeframe="monthly">
-      <span class="report-card__time">${hoursFormat(monthly.current)}</span>
-      <span class="report-card__previous">Last month - ${hoursFormat(monthly.previous)}</span>
-    </div>
-  </div>
   `;
 
   return $reportCard;
