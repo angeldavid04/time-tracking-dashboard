@@ -39,7 +39,7 @@ function createCard({ title, timeframes }, delay) {
         <h2 class="report-card__title">${title}</h2>
         <button type="button" class="report-card__menu-btn"><img src="images/icon-ellipsis.svg" alt="${title} open menu"></button>
       </div>
-      <div class="report-card__content" data-timeframe="daily" data-current>
+      <div class="report-card__content" data-timeframe="daily">
         <span class="report-card__time">${hoursFormat(daily.current)}</span>
         <span class="report-card__previous">Previous - ${hoursFormat(daily.previous)}</span>
       </div>
@@ -72,6 +72,7 @@ async function populateCards() {
     });
 
     $container.appendChild($fragment);
+    filterCards(document.querySelector(".report-card__radio:checked").value);
   } catch (err) {
     renderFetchError(err);
   }

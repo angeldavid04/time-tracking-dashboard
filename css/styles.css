@@ -143,9 +143,9 @@ body {
   cursor: pointer;
   border: none;
   font-family: inherit;
-  color: color-mix(in srgb, var(--navy200), transparent 50%);
+  color: var(--purple500);
   font-size: 1.1rem;
-  font-weight: 300;
+  font-weight: 400;
   transition: color 0.3s ease-in-out;
 
   &:hover {
