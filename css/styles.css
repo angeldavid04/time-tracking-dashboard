@@ -212,7 +212,7 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
 
-  &:hover:not(:has(button:hover)) {
+  &:where(:hover):not(:has(button:hover)) {
     background-color: color-mix(in srgb, var(--navy900) 90%, var(--navy200));
   }
 }
