@@ -99,7 +99,7 @@ function createCard({ title, timeframes }, delay) {
     <div class="report-card__main">
     <div class="report-card__title-container">
       <h2 class="report-card__title">${title}</h2>
-      <button class="report-card__menu-btn"><img src="images/icon-ellipsis.svg" alt="${title} open menu"></button>
+      <button type="button" class="report-card__menu-btn"><img src="images/icon-ellipsis.svg" alt="${title} open menu"></button>
     </div>
     <div class="report-card__content" data-timeframe="daily" data-current>
       <span class="report-card__time">${hoursFormat(daily.current)}</span>
