@@ -55,7 +55,7 @@ function renderFetchError({ status, statusText }) {
     .get(url)
     .then((res) => res.data)
     .catch((err) => {
-      throw err.response;
+      throw err.response ?? { status: 0, statusText: "Network error" };
     });
 
   return request;
@@ -80,7 +80,7 @@ async function getData(url) {
 
     return res.data;
   } catch (err) {
-    throw err.response;
+    throw err.response ?? { status: 0, statusText: "Network error" };
   }
 }
 
