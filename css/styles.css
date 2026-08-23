@@ -282,8 +282,8 @@ body {
   .reports {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr 1fr;
-    max-height: 50rem;
-    min-width: 62rem;
+    min-height: 30rem;
+    min-width: 64rem;
   }
 
   .report-card {
@@ -310,7 +310,7 @@ body {
     flex-direction: column;
     align-items: start;
     padding-inline: 2rem;
-    padding-block: 0.5rem;
+    padding-block: 1rem 1.25rem;
   }
 
   .report-card__main {
